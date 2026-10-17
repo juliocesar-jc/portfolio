@@ -1,6 +1,8 @@
 import { LogoItem } from '@/components/animations/logo-loop';
 import Image from 'next/image';
 import { FaAws } from 'react-icons/fa6';
+import { BsSlack } from 'react-icons/bs';
+import { RiOpenaiFill } from 'react-icons/ri';
 import {
 	SiAntdesign,
 	SiApollographql,
@@ -12,9 +14,9 @@ import {
 	SiCharles,
 	SiClaude,
 	SiContentful,
-	SiCss3,
+	SiCss,
 	SiCypress,
-	SiD3Dotjs,
+	SiD3,
 	SiDocker,
 	SiEsbuild,
 	SiEslint,
@@ -41,7 +43,6 @@ import {
 	SiNodedotjs,
 	SiNotion,
 	SiNpm,
-	SiOpenai,
 	SiPnpm,
 	SiPostgresql,
 	SiPostman,
@@ -54,7 +55,6 @@ import {
 	SiSanity,
 	SiSentry,
 	SiSass,
-	SiSlack,
 	SiSocketdotio,
 	SiStorybook,
 	SiStrapi,
@@ -110,7 +110,7 @@ export const TECHNOLOGIES: LogoItem[] = [
 		ariaLabel: 'HTML5',
 	},
 	{
-		node: <SiCss3 className='text-[#1572B6]' />,
+		node: <SiCss className='text-[#1572B6]' />,
 		title: 'CSS3',
 		href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
 		ariaLabel: 'CSS3',
@@ -547,7 +547,7 @@ export const TECHNOLOGIES: LogoItem[] = [
 
 	// Data Visualization
 	{
-		node: <SiD3Dotjs className='text-[#F9A03C]' />,
+		node: <SiD3 className='text-[#F9A03C]' />,
 		title: 'D3.js',
 		href: 'https://d3js.org',
 		ariaLabel: 'D3.js',
@@ -629,7 +629,7 @@ export const TECHNOLOGIES: LogoItem[] = [
 		ariaLabel: 'Notion',
 	},
 	{
-		node: <SiSlack className='text-[#4A154B]' />,
+		node: <BsSlack className='text-[#4A154B]' />,
 		title: 'Slack',
 		href: 'https://slack.com',
 		ariaLabel: 'Slack',
@@ -651,7 +651,7 @@ export const TECHNOLOGIES: LogoItem[] = [
 
 	// AI & ML
 	{
-		node: <SiOpenai className='dark:text-white text-black' />,
+		node: <RiOpenaiFill className='dark:text-white text-black' />,
 		title: 'OpenAI',
 		href: 'https://openai.com',
 		ariaLabel: 'OpenAI',
