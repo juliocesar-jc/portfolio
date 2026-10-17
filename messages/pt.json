@@ -1,10 +1,10 @@
 {
 	"metadata": {
-		"title": "Júlio César — Engenheiro Frontend | React · Next.js",
-		"titleTemplate": "%s — Júlio César",
-		"description": "Engenheiro Frontend com mais de 5 anos construindo aplicações React e Next.js performantes e otimizadas para SEO. Focado em Web Vitals, arquitetura e código limpo.",
-		"ogTitle": "Júlio César — Engenheiro Frontend",
-		"ogDescription": "Engenheiro Frontend com mais de 5 anos construindo aplicações React/Next.js de alta performance, focado em Web Vitals, SEO e arquitetura escalável."
+		"title": "Júlio César | Engenheiro Frontend | React · Next.js · React Native",
+		"titleTemplate": "%s | Júlio César",
+		"description": "Engenheiro Frontend com mais de 6 anos construindo apps performantes e otimizadas para SEO em React, Next.js e React Native. Focado em Web Vitals, arquitetura e código limpo.",
+		"ogTitle": "Júlio César | Engenheiro Frontend",
+		"ogDescription": "Engenheiro Frontend com mais de 6 anos construindo aplicações React, Next.js e React Native de alta performance, focado em Web Vitals, SEO e arquitetura escalável."
 	},
 	"header": {
 		"about": "Sobre",
@@ -19,7 +19,7 @@
 	"hero": {
 		"greeting": "Olá, sou Júlio César 👋",
 		"role": "Engenheiro Frontend",
-		"description": "Projeto e entrego sistemas frontend rápidos e escaláveis usando React e Next.js, com forte foco em Web Vitals e performance em produção.",
+		"description": "Projeto e entrego plataformas frontend rápidas e escaláveis com React, Next.js e React Native (Expo), com foco em Web Vitals, segurança e performance que se sustenta sob tráfego real de produção.",
 		"resume": "Meu Currículo",
 		"resumeUrl": "https://docs.google.com/document/d/1J5eUoPhEYmL2C8OuStbRq745tFnkjZcEh8t7fURl2ZE/edit?usp=sharing",
 		"getInTouch": "ENTRAR•EM•CONTATO•",
@@ -28,7 +28,7 @@
 	},
 	"about": {
 		"label": "Sobre Mim",
-		"content": "Sou Júlio César, engenheiro frontend com mais de 5 anos de experiência construindo aplicações web para uso real. Foco em escrever código limpo e confiável, contribuindo para produtos que evoluem ao longo do tempo."
+		"content": "Sou Júlio César, engenheiro frontend com mais de 6 anos entregando software que as pessoas realmente usam, de e-commerce e SaaS a plataformas de apostas de alto tráfego. Me importo com performance mensurável, segurança e código limpo e confiável, e gosto de resolver problemas de ponta a ponta."
 	},
 	"technologies": {
 		"listMode": "Modo lista",
@@ -39,7 +39,7 @@
 	"work": {
 		"label": "Minha trajetória",
 		"title": "Experiência",
-		"description": "Trabalhei em sistemas de produção em colaboração próxima com times de produto, design e engenharia. Minha abordagem prioriza clareza, manutenibilidade de longo prazo e decisões que escalam com o produto.",
+		"description": "Trabalho frontend em produção em e-commerce, SaaS e iGaming, hoje liderando iniciativas de performance, segurança e qualidade em toda a plataforma em um stack Next.js + React Native.",
 		"showMore": "Mostrar Mais ({count} restantes)",
 		"showLess": "Mostrar Menos",
 		"present": "Atual"
@@ -47,7 +47,7 @@
 	"projects": {
 		"label": "Projetos",
 		"title": "Projetos que construí",
-		"description": "Uma seleção de projetos que construí — de sistemas de checkout a plataformas em tempo real. Construídos com foco em performance, arquitetura e experiência do usuário.",
+		"description": "Projetos pessoais que projetei e entreguei sozinho, com foco em performance, arquitetura e experiência do usuário. Estes são open source: você pode abrir, dar fork e rodar. O trabalho em empresas é privado sob NDAs e fica resumido na seção de Experiência.",
 		"viewProject": "Ver Projeto",
 		"liveDemo": "Demo ao Vivo",
 		"sourceCode": "Código Fonte",
@@ -147,7 +147,7 @@
 	"education": {
 		"label": "Educação",
 		"title": "Formação",
-		"description": "Formação acadêmica que complementa minha experiência profissional.",
+		"description": "Formação completa cursada em paralelo com engenharia full-time.",
 		"showMore": "Mostrar Mais",
 		"showLess": "Mostrar Menos"
 	},
@@ -157,7 +157,7 @@
 		"items": {
 			"faq-1": {
 				"question": "Em quais tecnologias você é especialista?",
-				"answer": "Sou especialista em React, Next.js (App Router), TypeScript e Tailwind CSS. Também trabalho com gerenciamento de estado (Zustand, Redux), testes (Jest, React Testing Library) e workflows modernos de build/CI. Prefiro uma arquitetura orientada a componentes com tipagem forte e testes automatizados."
+				"answer": "Sou especialista em React, Next.js (App Router), React Native (Expo), TypeScript e Tailwind CSS. Também trabalho com gerenciamento de estado (Zustand, Redux), testes (Jest, React Testing Library) e workflows modernos de build/CI. Prefiro uma arquitetura orientada a componentes com tipagem forte e testes automatizados."
 			},
 			"faq-2": {
 				"question": "Você constrói interfaces acessíveis?",
@@ -165,11 +165,11 @@
 			},
 			"faq-3": {
 				"question": "Você pode trabalhar com design systems ou bibliotecas de componentes existentes?",
-				"answer": "Absolutamente. Integro com design systems existentes e posso adaptar componentes para corresponder ao sistema ou criar uma biblioteca de componentes escalável (tokens, stories, docs) quando não existe uma."
+				"answer": "Absolutamente, é parte do meu dia a dia. Em produção trabalho com um design system baseado em Tamagui que já revisei de ponta a ponta, e posso adaptar componentes para caber em um sistema existente, estendê-lo com segurança ou criar um do zero (tokens, stories, docs) quando não existe."
 			},
 			"faq-4": {
 				"question": "Qual é seu fluxo de desenvolvimento?",
-				"answer": "Sigo o workflow Git de feature-branch, PRs pequenos com commits descritivos, revisões de código, testes automatizados e CI que executa linting, verificação de tipos e testes. Releases são automatizados via CI/CD com deployments versionados e changelogs quando necessário."
+				"answer": "Git com feature-branches, mudanças pequenas e focadas, commits descritivos e revisão por pares; CI roda linting, verificação de tipos e testes automatizados, e releases são automatizadas com deployments versionados e changelogs. Para mudanças maiores escrevo propostas spec-first e adiciono quality gates ao CI, como budgets de bundle e estabilidade de E2E, para que a qualidade não dependa só de disciplina."
 			},
 			"faq-5": {
 				"question": "Você escreve testes? Que tipo?",
@@ -177,7 +177,7 @@
 			},
 			"faq-6": {
 				"question": "Como você aborda otimização de performance?",
-				"answer": "Otimizo performance via code-splitting, lazy-loading, otimização de imagens, headers de cache e análise cuidadosa de bundles. Também meço usando Lighthouse e métricas de usuário real quando disponíveis."
+				"answer": "Medir primeiro, otimizar depois: SSR-first, code-splitting, scripts de terceiros lazy, otimização de imagens e cache, consolidado com budgets de performance no CI para que regressões não cheguem em produção. Valido com A/Bs de lab e dados de usuário real (Lighthouse, SpeedCurve) quando disponíveis; trabalho recente em produção reduziu o LCP em 23% com uma reconstrução SSR-first."
 			},
 			"faq-7": {
 				"question": "Você lida com SEO e metadata para projetos?",
@@ -196,12 +196,12 @@
 				"answer": "Colaboro de perto com designers usando Figma: extração de tokens, specs responsivos e paridade de componentes. Forneço protótipos e trabalho com designers para manter componentes consistentes e manuteníveis."
 			},
 			"faq-11": {
-				"question": "Eu serei dono do código e propriedade intelectual?",
-				"answer": "Sim. Salvo acordo em contrato, código entregue e assets são transferidos ao cliente com licenciamento claro e acesso ao repositório. Posso assinar qualquer cessão de PI padrão se necessário."
+				"question": "Como é trabalhar com você no dia a dia?",
+				"answer": "Async-first e com tudo documentado: mudanças pequenas e focadas, atualizações honestas de status e decisões registradas com o 'porquê'. Aviso riscos cedo, maintenho os quality gates verdes para que ninguém precise 'babar' o CI, e trato code review como momento de ensino, não como portaria. Fusos horários são problema resolvido: meu time atual atravessa Brasil e Romênia."
 			},
 			"faq-12": {
-				"question": "Você oferece suporte pós-lançamento e manutenção?",
-				"answer": "Sim. Ofereço pacotes de suporte pós-lançamento para correção de bugs, monitoramento de performance e pequenas melhorias. Também recomendo planos de manutenção para atualizações de dependências e patches de segurança."
+				"question": "Que tipos de vagas e projetos você procura?",
+				"answer": "Hoje sou engenheiro frontend full-time em um time de plataforma na Flutter Brasil, trabalhando em performance, segurança e React Native em escala, e sempre aberto a conversas sobre oportunidades que combinem com esse perfil. Freelance, ao lado do trabalho, é seletivo e por projeto: melhor encaixe é engenharia de performance, design systems, tooling de plataforma ou tirar um app React Native (Expo) do zero."
 			},
 			"faq-13": {
 				"question": "Como você precifica projetos ou features?",
@@ -209,7 +209,7 @@
 			},
 			"faq-14": {
 				"question": "Você pode ajudar com decisões de arquitetura para apps maiores?",
-				"answer": "Sim. Forneço orientação de arquitetura incluindo modularização, fronteiras entre frontend e backend, estratégia de gerenciamento de estado, budgets de performance e recomendações de CI/CD para escalar o time e a codebase."
+				"answer": "Sim. Ajudo com fronteiras de módulos, arquitetura de estado e dados (Relay vs Apollo incluída), budgets de performance e de bundle aplicados no CI e estratégia de rollout com feature flags, que aplico diariamente em uma codebase de plataforma multi-time."
 			},
 			"faq-15": {
 				"question": "Você contribui para open-source ou fornece referências?",
@@ -303,9 +303,26 @@
 		]
 	},
 	"jobs": {
+		"flutter": {
+			"role": "Engenheiro Frontend",
+			"period": "Fev 2026 - Atual",
+			"achievements": [
+				"Liderei iniciativas de performance, segurança e qualidade em toda a plataforma, cobrindo os apps nativos (Expo/WebView), o cliente web (Next.js App Router) e pacotes compartilhados, em dois times durante sete meses.",
+				"Cortei ~292 KB do First Load JS (~95 KB gzip) liderando o programa de otimização de bundle em múltiplas fases: removi um bundle interno de devtools da produção (−59 KB), fiz code-split do Sentry replay (−133 KB parseado) e das telas de erro e de busca, e dividi a entrada do app em chunks por cache-group, consolidado como padrão de engenharia com um gate de bundle no CI.",
+				"Removi ~25.000 LOC de código morto em uma varredura completa do cliente web: deletei um pacote interno legado de bundling (−22.240 LOC) e ~3k LOC de arquivos órfãos, flags de experimento não utilizadas e testes órfãos.",
+				"Entreguei a página de evento SSR-first com ganhos medidos em Lighthouse A/B de mesmo build no mobile (Slow 4G + 4× CPU): LCP −23% (21.0s → 16.1s), CLS eliminado (0.09 → 0.00), TTI −21% (24.0s → 18.9s) e Speed Index −16%, com os maiores ganhos em aparelhos de entrada (Samsung Galaxy A14).",
+				"Reduzi o First Contentful Paint da home de 2.8s para 2.2s (−21%) com uma única mudança de banner e uma estratégia para reduzir o loading percebido.",
+				"Liderei o hardening de segurança antes do pico de tráfego da Copa de 2026: remediei 40+ CVEs de dependências (axios, undici, lodash, node-forge…), adicionei validação de token via Keycloak em APIs internas e previni XSS via postMessage em todas as superfícies WebView com um hook centralizado + regra ESLint custom, enquanto cobri o on-call de partidas ao vivo durante o pico de tráfego.",
+				"Reduzi as falhas de E2E flaky de ~10 por mudança enviada para quase zero (100% da flakiness observada corrigida), endurecendo as suítes de betbuilder, busca, eventos, history/cashout e área de usuário contra cold-start no Mobile Safari e hidratação SSR, mudando o processo de E2E do time para execução build-first.",
+				"Unifiquei a nova navbar em toda a plataforma atrás de uma feature flag no sportsbook, casino in-game e nativo, com parity de center-label no React Native, e depois removi a flag e todos os wrappers de navbar legados; ainda entreguei de ponta a ponta o rebranding do bet-builder.",
+				"Entreguei de ponta a ponta a experiência de pontos de fidelidade com um time internacional de fidelidade: UI de pontos, página 'Como ganhar pontos', seção de promoções exclusivas, carrossel de baús, cobertura E2E completa com Playwright, eventos de analytics no Amplitude e o rebranding da moeda de fidelidade em todos os locales, formalmente alocado no time de plataforma.",
+				"Consolidei a detecção de touch em todos os dispositivos criando um hook de detecção de touch-screen, que eliminou todo o chute por breakpoint/user-agent (iPad e notebooks touch agora funcionam corretamente), e corrigi uma race condition no script de consentimento nativo que renderizava HTML cru sem estilo dentro dos apps.",
+				"Reforcei a influência em toda a engenharia: 2 tech talks company-wide (hardening de segurança antes da Copa; o toolchain moderno com oxlint, oxfmt, tsgo e React Compiler), onboarding de dois engenheiros em feature flags e fluxo de deploy, a correção do Amplitude que destravou um hackathon company-wide, e a discovery da home nativa que recomendou Busca como primeiro slice nativo."
+			]
+		},
 		"compareGames": {
 			"role": "Engenheiro Frontend",
-			"period": "Mai 2024 - Atual",
+			"period": "Mai 2024 - Jan 2026",
 			"achievements": [
 				"Alcancei scores de Web Vitals acima de 90 e reduzi FCP para 0.2s aplicando HTML Semântico, SSR e otimizações de SEO em páginas críticas como Home, Produto, Blog, Catálogo e múltiplas Landing Pages, melhorando significativamente o ranking orgânico e experiência do usuário.",
 				"Diagnostiquei e resolvi vazamentos de memória complexos na AWS, reduzindo o consumo de RAM do servidor para menos de 300MB (<17%), garantindo estabilidade da plataforma mesmo durante picos de tráfego.",
@@ -362,7 +379,7 @@
 			"role": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
 			"period": "Set 2023 - Dez 2025",
 			"achievements": [
-				"Graduação tecnológica (nível superior) completa em Análise e Desenvolvimento de Sistemas, adquirindo conhecimentos fundamentais e habilidades práticas em desenvolvimento de software, análise de sistemas e gestão de projetos de TI."
+				"Graduação tecnológica em Análise e Desenvolvimento de Sistemas, concluída enquanto trabalhava full-time como engenheiro de software."
 			]
 		}
 	}

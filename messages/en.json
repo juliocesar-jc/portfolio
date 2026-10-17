@@ -1,10 +1,10 @@
 {
 	"metadata": {
-		"title": "Júlio César — Frontend Engineer | React · Next.js",
-		"titleTemplate": "%s — Júlio César",
-		"description": "Frontend Engineer with 5+ years building performant, SEO-friendly React and Next.js apps. Focused on Web Vitals, architecture, and clean code.",
-		"ogTitle": "Júlio César — Frontend Engineer",
-		"ogDescription": "Frontend Engineer with 5+ years building high-performance React/Next.js applications, focusing on Web Vitals, SEO and scalable architecture."
+		"title": "Júlio César | Frontend Engineer | React · Next.js · React Native",
+		"titleTemplate": "%s | Júlio César",
+		"description": "Frontend Engineer with 6+ years building performant, SEO-friendly React, Next.js and React Native apps. Focused on Web Vitals, architecture, and clean code.",
+		"ogTitle": "Júlio César | Frontend Engineer",
+		"ogDescription": "Frontend Engineer with 6+ years building high-performance React, Next.js and React Native applications, focusing on Web Vitals, SEO and scalable architecture."
 	},
 	"header": {
 		"about": "About",
@@ -19,7 +19,7 @@
 	"hero": {
 		"greeting": "Hi, I'm Júlio César 👋",
 		"role": "Frontend Engineer",
-		"description": "I design and ship fast, scalable frontend systems using React and Next.js, with a strong focus on Web Vitals and production performance.",
+		"description": "I design and ship fast, scalable frontend platforms with React, Next.js and React Native (Expo), focused on Web Vitals, security and performance that holds up under real production traffic.",
 		"resume": "My Resume",
 		"resumeUrl": "https://docs.google.com/document/d/1_qtAf8m3escXsqSDzLz5tiJ_eP_CZvMcNn6npJFKHos/edit?usp=sharing",
 		"getInTouch": "GET•IN•TOUCH•",
@@ -28,7 +28,7 @@
 	},
 	"about": {
 		"label": "About Me",
-		"content": "I'm Júlio César, a frontend engineer with over 5+ years of experience building web applications for real-world use. I focus on writing clean, reliable code and contributing to products that evolve over time."
+		"content": "I'm Júlio César, a frontend engineer with 6+ years shipping software people actually use, from e-commerce and SaaS to high-traffic betting platforms. I care about measurable performance, security and clean, reliable code, and I like owning problems end to end."
 	},
 	"technologies": {
 		"listMode": "List mode",
@@ -39,7 +39,7 @@
 	"work": {
 		"label": "Work History",
 		"title": "Experience",
-		"description": "I've worked on production systems in close collaboration with product, design, and engineering teams. My approach prioritizes clarity, long-term maintainability, and decisions that scale with the product.",
+		"description": "Production frontend work across e-commerce, SaaS and iGaming, currently driving platform-wide performance, security and quality on a Next.js + React Native stack.",
 		"showMore": "Show More ({count} more)",
 		"showLess": "Show Less",
 		"present": "Present"
@@ -47,7 +47,7 @@
 	"projects": {
 		"label": "Projects",
 		"title": "Projects that shipped",
-		"description": "A selection of projects I've built — from checkout systems to real-time platforms. Built with a focus on performance, architecture, and user experience.",
+		"description": "Personal projects I've designed and shipped solo, focused on performance, architecture and user experience. These are open source: you can open, fork and run them. My company work is private under NDAs and is summarized in the Experience section.",
 		"viewProject": "View Project",
 		"liveDemo": "Live Demo",
 		"sourceCode": "Source Code",
@@ -147,7 +147,7 @@
 	"education": {
 		"label": "Education",
 		"title": "Education",
-		"description": "Academic background that complements my professional experience.",
+		"description": "Formal education earned alongside full-time engineering work.",
 		"showMore": "Show More",
 		"showLess": "Show Less"
 	},
@@ -157,7 +157,7 @@
 		"items": {
 			"faq-1": {
 				"question": "What technologies do you specialize in?",
-				"answer": "I specialize in React, Next.js (App Router), TypeScript and Tailwind CSS. I also work with state management (Zustand, Redux), testing (Jest, React Testing Library), and modern build/CI workflows. I prefer a component-driven architecture with strong typing and automated tests."
+				"answer": "I specialize in React, Next.js (App Router), React Native (Expo), TypeScript and Tailwind CSS. I also work with state management (Zustand, Redux), testing (Jest, React Testing Library), and modern build/CI workflows. I prefer a component-driven architecture with strong typing and automated tests."
 			},
 			"faq-2": {
 				"question": "Do you build accessible interfaces?",
@@ -165,11 +165,11 @@
 			},
 			"faq-3": {
 				"question": "Can you work with existing design systems or component libraries?",
-				"answer": "Absolutely. I integrate with existing design systems and can either adapt components to match the system or create a scalable component library (tokens, stories, docs) when one is missing."
+				"answer": "Absolutely, it's part of my day job. In production I work with a Tamagui-based design system I've reviewed end to end, and I can adapt components to fit an existing system, extend it safely, or bootstrap a new one (tokens, stories, docs) when it doesn't exist."
 			},
 			"faq-4": {
 				"question": "What is your development workflow?",
-				"answer": "I follow feature-branch Git workflow, small PRs with descriptive commits, peer reviews, automated tests, and CI that runs linting, type checks and tests. Releases are automated via CI/CD with versioned deployments and changelogs when needed."
+				"answer": "Feature-branch Git with small, focused changes, descriptive commits and peer review; CI runs linting, type checks and automated tests, and releases are automated with versioned deployments and changelogs. For larger changes I write spec-first proposals and add quality gates to CI, such as bundle budgets and E2E stability, so quality doesn't depend on discipline alone."
 			},
 			"faq-5": {
 				"question": "Do you write tests? What kind?",
@@ -177,7 +177,7 @@
 			},
 			"faq-6": {
 				"question": "How do you approach performance optimization?",
-				"answer": "I optimize performance via code-splitting, lazy-loading, image optimization, caching headers, and careful bundle analysis. I also measure using Lighthouse and real-user metrics when available."
+				"answer": "Measure first, optimize second: SSR-first rendering, code-splitting, lazy third-party scripts, image optimization and caching, locked in with performance budgets in CI so regressions can't ship. I verify with lab A/Bs and real-user data (Lighthouse, SpeedCurve) where available; recent production work cut LCP by 23% via an SSR-first rebuild."
 			},
 			"faq-7": {
 				"question": "Do you handle SEO and metadata for projects?",
@@ -196,12 +196,12 @@
 				"answer": "I collaborate closely with designers using Figma: tokens extraction, responsive specs, and component parity. I provide prototypes and work with designers to keep components consistent and maintainable."
 			},
 			"faq-11": {
-				"question": "Will I own the code and intellectual property?",
-				"answer": "Yes. Unless otherwise agreed in a contract, delivered code and assets are transferred to the client with clear licensing and repository access. I can sign any standard IP assignment if required."
+				"question": "What's it like working with you day-to-day?",
+				"answer": "Async-first and doc-heavy: small, focused changes, honest status updates, and decisions written down with the 'why'. I flag risks early, keep quality gates green so nobody babysits CI, and treat code reviews as teaching moments rather than gatekeeping. Timezones are a solved problem: my current team spans Brazil and Romania."
 			},
 			"faq-12": {
-				"question": "Do you provide post-launch support and maintenance?",
-				"answer": "Yes. I offer post-launch support packages for bug fixes, performance monitoring, and small improvements. I also recommend maintenance plans for dependency updates and security patches."
+				"question": "What kind of roles and projects are you looking for?",
+				"answer": "I'm currently a full-time frontend engineer on a platform team at Flutter Brazil, working on performance, security and React Native at scale, and always happy to talk about opportunities that fit that profile. Freelance work alongside my job is selective and project-based: best fit is performance engineering, design systems, platform tooling or shipping a React Native (Expo) app from zero."
 			},
 			"faq-13": {
 				"question": "How do you price projects or features?",
@@ -209,7 +209,7 @@
 			},
 			"faq-14": {
 				"question": "Can you help with architecture decisions for larger apps?",
-				"answer": "Yes. I provide architecture guidance including modularization, boundaries between frontend and backend, state management strategy, performance budgets, and CI/CD recommendations to scale the team and codebase."
+				"answer": "Yes. I help with module boundaries, state and data architecture (Relay vs Apollo included), performance and bundle budgets enforced in CI, and feature-flag rollout strategy, which I apply daily on a multi-team platform codebase."
 			},
 			"faq-15": {
 				"question": "Do you contribute to open-source or provide references?",
@@ -303,9 +303,26 @@
 		]
 	},
 	"jobs": {
+		"flutter": {
+			"role": "Frontend Engineer",
+			"period": "Feb 2026 - Present",
+			"achievements": [
+				"Owned platform-wide performance, security and quality initiatives across the native apps (Expo/WebView), the web client (Next.js App Router) and shared packages, spanning two teams in seven months.",
+				"Cut ~292 KB parsed (~95 KB gzip) from First Load JS by leading the multi-phase bundle-size program: removed an internal devtools bundle from production (−59 KB), code-split Sentry replay (−133 KB parsed) and the error and search screens, and split the app entry into cache-group chunks, locked in as an engineering-wide standard with a CI bundle-size gate.",
+				"Removed ~25,000 LOC of dead code in a full web-client sweep: deleted a legacy internal bundling package (−22,240 LOC) plus ~3k LOC of orphan files, unused experiment flags and orphan tests.",
+				"Shipped an SSR-first event page with same-build Lighthouse A/B wins on mobile (Slow 4G + 4× CPU): LCP −23% (21.0s → 16.1s), CLS eliminated (0.09 → 0.00), TTI −21% (24.0s → 18.9s) and Speed Index −16%, with the biggest gains on low-end devices (Samsung Galaxy A14).",
+				"Reduced home First Contentful Paint from 2.8s → 2.2s (−21%) with a single banner change plus a perceived-loading reduction strategy.",
+				"Led security hardening ahead of the 2026 World Cup traffic peak: remediated 40+ dependency CVEs (axios, undici, lodash, node-forge…), added Keycloak token validation to internal APIs, and prevented postMessage XSS across every WebView surface with a centralized hook + a custom ESLint rule, while owning live-match on-call coverage through the traffic peak.",
+				"Drove flaky E2E failures from ~10 per submitted change down to near-zero (100% of observed flakiness fixed) by hardening betbuilder, search, events, history/cashout and user-area suites against Mobile Safari cold-start and SSR hydration, changing the team's E2E process to build-first execution.",
+				"Unified the new navbar platform-wide behind a feature flag across sportsbook, casino in-game and native with React Native center-label parity, then removed the flag and all legacy navbar wrappers once stable; also shipped the bet-builder rebranding end-to-end.",
+				"Delivered the loyalty points experience end to end with an international loyalty team: points UI, 'How to earn' page, exclusive promotions section, chest carousel, full Playwright E2E coverage, Amplitude analytics events and the loyalty-currency rebranding across every locale, while formally on the platform team.",
+				"Fixed touch input on every device by building a touch-screen detection hook that removed all breakpoint/user-agent guessing (iPad and touch-screen laptops now correct), and fixed a race condition in the native consent script that rendered raw unstyled HTML inside the apps.",
+				"Drove engineering-wide influence: 2 company-wide tech talks (World Cup security hardening; the modern oxlint/oxfmt/tsgo/React Compiler toolchain), onboarded two engineers on feature-flag rollout and the deploy flow, unblocked a company-wide hackathon via an Amplitude fix, and led the discovery for the native home screen, recommending Search as its first native slice."
+			]
+		},
 		"compareGames": {
 			"role": "Frontend Engineer",
-			"period": "May 2024 - Present",
+			"period": "May 2024 - Jan 2026",
 			"achievements": [
 				"Achieved 90+ Web Vitals scores and reduced FCP to 0.2s by applying Semantic HTML, SSR, and SEO optimizations across critical pages such as Home, Product, Blog, Catalog, and multiple Landing Pages, significantly improving organic ranking and user experience.",
 				"Diagnosed and resolved complex AWS memory leaks, reducing server RAM consumption to under 300MB (<17%), ensuring platform stability even during traffic peaks.",
@@ -362,7 +379,7 @@
 			"role": "Associate Degree in Analysis and Systems Development",
 			"period": "Sep 2023 - Dec 2025",
 			"achievements": [
-				"Completed a Technology Degree (bachelor's level) in Analysis and Systems Development, acquiring foundational knowledge and practical skills in software development, systems analysis, and IT project management."
+				"Completed the Technology Degree in Analysis and Systems Development while working full-time as a software engineer."
 			]
 		}
 	}

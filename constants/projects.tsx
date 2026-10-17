@@ -71,7 +71,7 @@ export const PROJECTS: ProjectData[] = [
 		banner: '/projects/portfolio-banner.webp',
 		mediaType: 'video',
 		liveUrl: 'https://juliocesardev.vercel.app',
-		githubUrl: 'https://github.com/jotace-br/portfolio',
+		githubUrl: 'https://github.com/juliocesar-jc/portfolio',
 	},
 	{
 		id: 'radio-seeker',
@@ -94,7 +94,7 @@ export const PROJECTS: ProjectData[] = [
 		media: '/videos/radio-seeker-video.mp4',
 		banner: '/projects/radio-seeker-banner.webp',
 		mediaType: 'video',
-		githubUrl: 'https://github.com/jotace-br/radio-seeker',
+		githubUrl: 'https://github.com/juliocesar-jc/radio-seeker',
 		liveUrl: 'https://radio-seeker.vercel.app/',
 	},
 	{
@@ -120,7 +120,7 @@ export const PROJECTS: ProjectData[] = [
 		media: '/videos/weather98-video.mp4',
 		banner: '/projects/weather98-banner.webp',
 		mediaType: 'video',
-		githubUrl: 'https://github.com/jotace-br/weather98',
+		githubUrl: 'https://github.com/juliocesar-jc/weather98',
 		liveUrl: 'https://weather98.vercel.app/',
 	},
 	{
@@ -140,6 +140,6 @@ export const PROJECTS: ProjectData[] = [
 		banner: '/projects/burger-app-banner.webp',
 		mediaType: 'video',
 		liveUrl: 'https://burger-app-seven.vercel.app/',
-		githubUrl: 'https://github.com/jotace-br/burger-app',
+		githubUrl: 'https://github.com/juliocesar-jc/burger-app',
 	},
 ];

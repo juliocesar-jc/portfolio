@@ -75,7 +75,7 @@ export const HeroSection = memo(function HeroSection() {
 								</Button>
 							</a>
 							<a
-								href='https://github.com/jotace-br'
+								href='https://github.com/juliocesar-jc'
 								target='_blank'
 								rel='noopener noreferrer'
 								className='pointer-events-auto'
