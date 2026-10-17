@@ -164,7 +164,7 @@ const Footer = memo(function Footer() {
 								</Link>
 
 								<Link
-									href='https://github.com/jotace-br'
+									href='https://github.com/juliocesar-jc'
 									target='_blank'
 									rel='noopener noreferrer'
 									className='p-5 rounded-xl bg-slate-50 dark:bg-zinc-800 border border-slate-200 dark:border-gray-700 hover:border-slate-400 dark:hover:border-gray-500 transition-all motion-reduce:transition-none hover:shadow-md group flex flex-col justify-between'

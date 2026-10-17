@@ -10,7 +10,7 @@ export const SOCIAL_MEDIA_LINKS = [
 	},
 	{
 		label: 'GitHub',
-		link: 'https://github.com/jotace-br',
+		link: 'https://github.com/juliocesar-jc',
 		icon: <SiGithub className='size-5' />,
 	},
 	{

@@ -9,6 +9,8 @@ import {
 	SiBun,
 	SiChakraui,
 	SiChartdotjs,
+	SiCharles,
+	SiClaude,
 	SiContentful,
 	SiCss3,
 	SiCypress,
@@ -16,6 +18,7 @@ import {
 	SiDocker,
 	SiEsbuild,
 	SiEslint,
+	SiExpo,
 	SiExpress,
 	SiFigma,
 	SiFramer,
@@ -24,6 +27,7 @@ import {
 	SiGithubactions,
 	SiGitlab,
 	SiGooglecloud,
+	SiGrafana,
 	SiGraphql,
 	SiHtml5,
 	SiJavascript,
@@ -46,7 +50,9 @@ import {
 	SiReact,
 	SiReacthookform,
 	SiRedux,
+	SiRelay,
 	SiSanity,
+	SiSentry,
 	SiSass,
 	SiSlack,
 	SiSocketdotio,
@@ -108,6 +114,27 @@ export const TECHNOLOGIES: LogoItem[] = [
 		title: 'CSS3',
 		href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
 		ariaLabel: 'CSS3',
+	},
+
+	// Mobile
+	{
+		node: (
+			<Image
+				src='/logos/react-native.svg'
+				alt=''
+				width={48}
+				height={44}
+			/>
+		),
+		title: 'React Native',
+		href: 'https://reactnative.dev',
+		ariaLabel: 'React Native',
+	},
+	{
+		node: <SiExpo className='dark:text-white text-black' />,
+		title: 'Expo',
+		href: 'https://expo.dev',
+		ariaLabel: 'Expo',
 	},
 
 	// Styling
@@ -228,6 +255,12 @@ export const TECHNOLOGIES: LogoItem[] = [
 		title: 'Apollo GraphQL',
 		href: 'https://www.apollographql.com',
 		ariaLabel: 'Apollo GraphQL',
+	},
+	{
+		node: <SiRelay className='text-[#F26B00]' />,
+		title: 'Relay',
+		href: 'https://relay.dev',
+		ariaLabel: 'Relay',
 	},
 
 	// Forms
@@ -368,6 +401,40 @@ export const TECHNOLOGIES: LogoItem[] = [
 		title: 'Nginx',
 		href: 'https://nginx.org',
 		ariaLabel: 'Nginx',
+	},
+
+	// Observability & Analytics
+	{
+		node: <SiSentry className='dark:text-white text-[#362D59]' />,
+		title: 'Sentry',
+		href: 'https://sentry.io',
+		ariaLabel: 'Sentry',
+	},
+	{
+		node: <SiGrafana className='text-[#F46800]' />,
+		title: 'Grafana',
+		href: 'https://grafana.com',
+		ariaLabel: 'Grafana',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/amplitude.svg'
+				alt=''
+				width={48}
+				height={48}
+				className='dark:invert'
+			/>
+		),
+		title: 'Amplitude',
+		href: 'https://amplitude.com',
+		ariaLabel: 'Amplitude',
+	},
+	{
+		node: <span className='text-[#00354F] dark:text-[#35A2D3] font-bold text-lg'>SpeedCurve</span>,
+		title: 'SpeedCurve',
+		href: 'https://speedcurve.com',
+		ariaLabel: 'SpeedCurve',
 	},
 
 	// CI/CD
@@ -575,6 +642,12 @@ export const TECHNOLOGIES: LogoItem[] = [
 		href: 'https://www.postman.com',
 		ariaLabel: 'Postman',
 	},
+	{
+		node: <SiCharles className='dark:text-white text-black' />,
+		title: 'Charles Proxy',
+		href: 'https://www.charlesproxy.com',
+		ariaLabel: 'Charles Proxy',
+	},
 
 	// AI & ML
 	{
@@ -582,6 +655,79 @@ export const TECHNOLOGIES: LogoItem[] = [
 		title: 'OpenAI',
 		href: 'https://openai.com',
 		ariaLabel: 'OpenAI',
+	},
+	{
+		node: <SiClaude className='text-[#D97757]' />,
+		title: 'Claude',
+		href: 'https://claude.ai',
+		ariaLabel: 'Claude',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/cursor.svg'
+				alt=''
+				width={48}
+				height={48}
+				className='dark:invert'
+			/>
+		),
+		title: 'Cursor',
+		href: 'https://cursor.com',
+		ariaLabel: 'Cursor',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/opencode.svg'
+				alt=''
+				width={48}
+				height={48}
+			/>
+		),
+		title: 'OpenCode',
+		href: 'https://opencode.ai',
+		ariaLabel: 'OpenCode',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/omp.svg'
+				alt=''
+				width={48}
+				height={48}
+			/>
+		),
+		title: 'OMP',
+		href: 'https://omp.sh',
+		ariaLabel: 'OMP',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/pi.svg'
+				alt=''
+				width={48}
+				height={48}
+				className='dark:invert'
+			/>
+		),
+		title: 'Pi',
+		href: 'https://pi.dev',
+		ariaLabel: 'Pi',
+	},
+	{
+		node: (
+			<Image
+				src='/logos/openrouter.svg'
+				alt=''
+				width={48}
+				height={34}
+			/>
+		),
+		title: 'OpenRouter',
+		href: 'https://openrouter.ai',
+		ariaLabel: 'OpenRouter',
 	},
 
 	// IDE

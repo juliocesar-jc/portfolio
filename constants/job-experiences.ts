@@ -8,6 +8,13 @@ export interface JobExperienceData {
 
 export const JOB_EXPERIENCES: JobExperienceData[] = [
 	{
+		id: '6',
+		translationKey: 'flutter',
+		company: 'Flutter Brazil',
+		companyLink: 'https://flutter.com/',
+		logo: '/logos/companies/flutter.webp',
+	},
+	{
 		id: '1',
 		translationKey: 'compareGames',
 		company: 'Compare Games',
