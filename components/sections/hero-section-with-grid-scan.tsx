@@ -17,7 +17,7 @@ function StaticGridBackground() {
 					backgroundSize: '60px 60px',
 				}}
 			/>
-			<div className='absolute inset-0 bg-linear-to-b rom-background via-transparent to-background' />
+			<div className='absolute inset-0 bg-linear-to-b from-background via-transparent to-background' />
 			<div className='absolute inset-0 bg-linear-to-r from-background via-transparent to-background opacity-50' />
 			<div
 				className='absolute inset-0'
