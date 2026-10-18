@@ -12,7 +12,13 @@ interface ReducedMotionConfig {
 }
 
 let cachedIsLowEndDevice: boolean | null = null;
-let hasCheckedClient = false;
+const lowEndListeners = new Set<() => void>();
+
+function notifyLowEndListeners(): void {
+	for (const listener of lowEndListeners) {
+		listener();
+	}
+}
 
 function checkLowEndDevice(): boolean {
 	// Always return false on server - we'll check properly on client
@@ -20,14 +26,11 @@ function checkLowEndDevice(): boolean {
 		return false;
 	}
 
-	// Return cached value only if we've done a proper client-side check
-	if (hasCheckedClient && cachedIsLowEndDevice !== null) {
+	// Return the cached value (it never becomes null again after the first call)
+	if (cachedIsLowEndDevice !== null) {
 		return cachedIsLowEndDevice;
 	}
 
-	// Mark that we're doing a client-side check
-	hasCheckedClient = true;
-	
 	let isLowEnd = false;
 
 	try {
@@ -50,8 +53,8 @@ function checkLowEndDevice(): boolean {
 		// 3. Network Information API - check if user prefers data saving
 		const connection = (
 			navigator as Navigator & {
-				connection?: { 
-					saveData?: boolean; 
+				connection?: {
+					saveData?: boolean;
 					effectiveType?: string;
 					downlink?: number;
 					rtt?: number;
@@ -98,25 +101,6 @@ function checkLowEndDevice(): boolean {
 			isLowEnd = true;
 		}
 
-		// 5. Battery level check (if charging and < 20%, be conservative)
-		if ('getBattery' in navigator) {
-			(navigator as Navigator & {
-				getBattery?: () => Promise<{
-					level: number;
-					charging: boolean;
-				}>;
-			})
-				.getBattery?.()
-				?.then(battery => {
-					if (!battery.charging && battery.level < 0.2) {
-						cachedIsLowEndDevice = true;
-					}
-				})
-				.catch(() => {
-					// Battery API failed, ignore
-				});
-		}
-
 		// 6. Performance memory check (if available)
 		const performance = window.performance as Performance & {
 			memory?: {
@@ -133,12 +117,71 @@ function checkLowEndDevice(): boolean {
 				isLowEnd = true;
 			}
 		}
+
+		// One-shot diagnostic in development: prints exactly what was measured
+		// and why the verdict was reached, so misclassifications can be traced
+		if (process.env.NODE_ENV !== 'production') {
+			console.info(
+				'[useReducedMotion] low-end check:',
+				JSON.stringify({
+					deviceMemory,
+					hardwareConcurrency: navigator.hardwareConcurrency,
+					saveData: connection?.saveData ?? null,
+					effectiveType: connection?.effectiveType ?? null,
+					downlink: connection?.downlink ?? null,
+					rtt: connection?.rtt ?? null,
+					uaFlagged: lowEndPatterns.some(pattern => pattern.test(ua)),
+					heapLimitGB:
+						performance.memory ?
+							Math.round(
+								(performance.memory.jsHeapSizeLimit / 1024 ** 3) * 10
+							) / 10
+						:	null,
+					prefersReducedMotion: window.matchMedia(
+						'(prefers-reduced-motion: reduce)'
+					).matches,
+					isLowEndDevice: isLowEnd,
+					shouldReduceMotion: isLowEnd,
+				})
+			);
+		}
 	} catch (error) {
 		// If any check fails, default to false (assume capable device)
 		console.warn('Low-end device detection error:', error);
 	}
 
 	cachedIsLowEndDevice = isLowEnd;
+
+	// 5. Battery level check (if on battery and < 20%, be conservative).
+	// This is asynchronous, so it is resolved after the synchronous check above.
+	// When it flips the answer, notify every subscriber so all components stay
+	// in sync instead of silently diverging on their next read.
+	if ('getBattery' in navigator) {
+		(navigator as Navigator & {
+			getBattery?: () => Promise<{
+				level: number;
+				charging: boolean;
+			}>;
+		})
+			.getBattery?.()
+			.then(battery => {
+				if (!battery.charging && battery.level < 0.2) {
+					if (cachedIsLowEndDevice === false) {
+						cachedIsLowEndDevice = true;
+						notifyLowEndListeners();
+						if (process.env.NODE_ENV !== 'production') {
+							console.info(
+								'[useReducedMotion] battery flip: unplugged and level < 20% -> low-end'
+							);
+						}
+					}
+				}
+			})
+			.catch(() => {
+				// Battery API failed, ignore
+			});
+	}
+
 	return isLowEnd;
 }
 
@@ -167,8 +210,43 @@ function getLowEndDeviceSnapshot(): boolean {
 	return checkLowEndDevice();
 }
 
-function subscribeToLowEndDevice(): () => void {
+function subscribeToLowEndDevice(callback: () => void): () => void {
+	if (typeof window === 'undefined') return () => {};
+
+	lowEndListeners.add(callback);
+
+	return () => {
+		lowEndListeners.delete(callback);
+	};
+}
+
+/**
+ * Deliberate testing override: `?motion=reduced` forces the reduced version,
+ * `?motion=full` forces the full version (e.g. to preview the high-end
+ * experience while an OS reduced-motion preference is active). The reported
+ * device/preference flags stay truthful; only the effective branch decision
+ * is overridden.
+ *
+ * The override is applied only after hydration, so the first client render
+ * always matches the server-rendered HTML (no hydration mismatch).
+ */
+function getForcedMotionPreference(): 'reduced' | 'full' | null {
+	if (typeof window === 'undefined') return null;
+
+	const param = new URLSearchParams(window.location.search).get('motion');
+	return param === 'reduced' || param === 'full' ? param : null;
+}
+
+function subscribeNoop(): () => void {
 	return () => {};
+}
+
+function getIsHydrated(): boolean {
+	return true;
+}
+
+function getServerIsHydrated(): boolean {
+	return false;
 }
 
 /**
@@ -181,6 +259,11 @@ function subscribeToLowEndDevice(): () => void {
  * - Network Information API:
  *   - navigator.connection.saveData preference
  *   - navigator.connection.effectiveType indicates a slow connection (slow-2g, 2g, 3g)
+ * - Battery status (low battery while unplugged)
+ *
+ * All values are computed synchronously once and cached, so the first
+ * client render already matches the final state. Any late async change
+ * (e.g. battery status) notifies every subscriber at once.
  *
  * @returns Configuration object with motion preference details
  */
@@ -197,10 +280,22 @@ export function useReducedMotion(): ReducedMotionConfig {
 		getServerSnapshot
 	);
 
+	const isHydrated = useSyncExternalStore(
+		subscribeNoop,
+		getIsHydrated,
+		getServerIsHydrated
+	);
+
+	// Only apply ?motion= override after hydration to keep the SSR HTML
+	// and the first client render identical
+	const forced = isHydrated ? getForcedMotionPreference() : null;
+	const baseShouldReduce = prefersReducedMotion || isLowEndDevice;
+
 	return {
 		prefersReducedMotion,
 		isLowEndDevice,
-		shouldReduceMotion: prefersReducedMotion || isLowEndDevice,
+		shouldReduceMotion:
+			forced === 'reduced' || (forced === 'full' ? false : baseShouldReduce),
 	};
 }
 

@@ -142,7 +142,7 @@ const CircularText: React.FC<CircularTextProps> = memo(function CircularText({
 					return (
 						<span
 							key={i}
-							className='absolute inline-block inset-0 text-sm sm:text-base md:text-xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)] motion-reduce:transition-none'
+							className='absolute inline-block inset-0 text-sm sm:text-base md:text-xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)] motion-reduce:transition-none motion-safe:animate-fade-in-opacity'
 							style={{ transform, WebkitTransform: transform }}
 						>
 							{letter}
@@ -151,7 +151,7 @@ const CircularText: React.FC<CircularTextProps> = memo(function CircularText({
 				})}
 			</motion.div>
 			{children && (
-				<div className='absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-300 group-hover:rotate-135 motion-reduce:transition-none motion-reduce:group-hover:rotate-0'>
+				<div className='absolute inset-0 flex items-center justify-center pointer-events-none transition-transform duration-300 group-hover:rotate-135 motion-reduce:transition-none motion-reduce:group-hover:rotate-0 motion-safe:animate-fade-in-opacity'>
 					{children}
 				</div>
 			)}

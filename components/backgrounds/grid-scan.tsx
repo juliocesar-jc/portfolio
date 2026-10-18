@@ -323,6 +323,7 @@ export const GridScan: React.FC<GridScanProps> = ({
 	snapBackDelay = 250,
 	className,
 	style,
+	onCanvasReady,
 }) => {
 	const { resolvedTheme } = useTheme();
 	const containerRef = useRef<HTMLDivElement | null>(null);
@@ -415,11 +416,14 @@ export const GridScan: React.FC<GridScanProps> = ({
 		const onLeave = () => {
 			if (uiFaceActive) return;
 			if (leaveTimer) clearTimeout(leaveTimer);
-			leaveTimer = window.setTimeout(() => {
-				lookTarget.current.set(0, 0);
-				tiltTarget.current = 0;
-				yawTarget.current = 0;
-			}, Math.max(0, snapBackDelay || 0));
+			leaveTimer = window.setTimeout(
+				() => {
+					lookTarget.current.set(0, 0);
+					tiltTarget.current = 0;
+					yawTarget.current = 0;
+				},
+				Math.max(0, snapBackDelay || 0),
+			);
 		};
 		el.addEventListener('mousemove', onMove);
 		el.addEventListener('mouseenter', onEnter);
@@ -438,6 +442,8 @@ export const GridScan: React.FC<GridScanProps> = ({
 		const container = containerRef.current;
 		if (!container) return;
 
+		let disposed = false;
+
 		const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 		rendererRef.current = renderer;
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -446,14 +452,25 @@ export const GridScan: React.FC<GridScanProps> = ({
 		renderer.toneMapping = THREE.NoToneMapping;
 		renderer.autoClear = false;
 		renderer.setClearColor(0x000000, 0);
-		container.appendChild(renderer.domElement);
+		const canvasEl = renderer.domElement;
+		canvasEl.style.opacity = '0';
+		canvasEl.style.transition = 'opacity 0.8s ease';
+		container.appendChild(canvasEl);
+
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				if (disposed) return;
+				canvasEl.style.opacity = '1';
+				onCanvasReady?.();
+			});
+		});
 
 		const uniforms = {
 			iResolution: {
 				value: new THREE.Vector3(
 					container.clientWidth,
 					container.clientHeight,
-					renderer.getPixelRatio()
+					renderer.getPixelRatio(),
 				),
 			},
 			iTime: { value: 0 },
@@ -481,8 +498,8 @@ export const GridScan: React.FC<GridScanProps> = ({
 					scanDirection === 'backward'
 						? 1
 						: scanDirection === 'pingpong'
-						? 2
-						: 0,
+							? 2
+							: 0,
 			},
 			uScanStarts: { value: new Array(MAX_SCANS).fill(0) },
 			uScanCount: { value: 0 },
@@ -536,12 +553,12 @@ export const GridScan: React.FC<GridScanProps> = ({
 			material.uniforms.iResolution.value.set(
 				container.clientWidth,
 				container.clientHeight,
-				renderer.getPixelRatio()
+				renderer.getPixelRatio(),
 			);
 			if (composerRef.current)
 				composerRef.current.setSize(
 					container.clientWidth,
-					container.clientHeight
+					container.clientHeight,
 				);
 		};
 		window.addEventListener('resize', onResize);
@@ -559,8 +576,8 @@ export const GridScan: React.FC<GridScanProps> = ({
 					lookVel.current,
 					smoothTime,
 					maxSpeed,
-					dt
-				)
+					dt,
+				),
 			);
 
 			const tiltSm = smoothDampFloat(
@@ -569,7 +586,7 @@ export const GridScan: React.FC<GridScanProps> = ({
 				{ v: tiltVel.current },
 				smoothTime,
 				maxSpeed,
-				dt
+				dt,
 			);
 			tiltCurrent.current = tiltSm.value;
 			tiltVel.current = tiltSm.v;
@@ -580,21 +597,21 @@ export const GridScan: React.FC<GridScanProps> = ({
 				{ v: yawVel.current },
 				smoothTime,
 				maxSpeed,
-				dt
+				dt,
 			);
 			yawCurrent.current = yawSm.value;
 			yawVel.current = yawSm.v;
 
 			const skew = new THREE.Vector2(
 				lookCurrent.current.x * skewScale,
-				-lookCurrent.current.y * yBoost * skewScale
+				-lookCurrent.current.y * yBoost * skewScale,
 			);
 			material.uniforms.uSkew.value.set(skew.x, skew.y);
 			material.uniforms.uTilt.value = tiltCurrent.current * tiltScale;
 			material.uniforms.uYaw.value = THREE.MathUtils.clamp(
 				yawCurrent.current * yawScale,
 				-0.6,
-				0.6
+				0.6,
 			);
 
 			material.uniforms.iTime.value = now / 1000;
@@ -609,6 +626,7 @@ export const GridScan: React.FC<GridScanProps> = ({
 		rafRef.current = requestAnimationFrame(tick);
 
 		return () => {
+			disposed = true;
 			if (rafRef.current) cancelAnimationFrame(rafRef.current);
 			window.removeEventListener('resize', onResize);
 			material.dispose();
@@ -724,7 +742,7 @@ function smoothDampVec2(
 	currentVelocity: THREE.Vector2,
 	smoothTime: number,
 	maxSpeed: number,
-	deltaTime: number
+	deltaTime: number,
 ): THREE.Vector2 {
 	const out = current.clone();
 	smoothTime = Math.max(0.0001, smoothTime);
@@ -763,7 +781,7 @@ function smoothDampFloat(
 	velRef: { v: number },
 	smoothTime: number,
 	maxSpeed: number,
-	deltaTime: number
+	deltaTime: number,
 ): { value: number; v: number } {
 	smoothTime = Math.max(0.0001, smoothTime);
 	const omega = 2 / smoothTime;
