@@ -28,4 +28,5 @@ export type GridScanProps = {
 	snapBackDelay?: number;
 	className?: string;
 	style?: React.CSSProperties;
+	onCanvasReady?: () => void;
 };

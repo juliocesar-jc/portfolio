@@ -16,9 +16,12 @@ const CircularText = dynamic(
 	{
 		ssr: false,
 		loading: () => (
-			<div className='size-24 sm:size-28 md:size-32 rounded-full border border-dashed border-slate-400 dark:border-gray-600 animate-spin-slow motion-reduce:animate-none' />
+			<div
+				aria-hidden='true'
+				className='size-24 sm:size-28 md:size-32 rounded-full animate-spin-slow motion-reduce:animate-none border-2 border-gray-200/50 dark:border-gray-700/50 bg-gray-200/80 dark:bg-gray-800/5 backdrop-blur-md shadow-lg'
+			/>
 		),
-	}
+	},
 );
 
 export const HeroSection = memo(function HeroSection() {

@@ -49,7 +49,7 @@ export const PageReveal = memo(function PageReveal({
 			</motion.div>
 
 			<motion.div
-				className='fixed inset-0 z-40 bg-white dark:bg-zinc-950'
+				className='fixed inset-0 z-40 bg-white dark:bg-zinc-950 motion-reduce:hidden'
 				initial={{ x: 0 }}
 				animate={{ x: isRevealing ? '100%' : 0 }}
 				transition={{

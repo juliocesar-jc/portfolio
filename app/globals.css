@@ -131,6 +131,7 @@
 	--animate-shine: shine 2.2s linear infinite;
 	--animate-spin-slow: spin-slow 20s linear infinite;
 	--animate-fade-in: fade-in 0.5s ease-out;
+	--animate-fade-in-opacity: fade-in-opacity 0.6s ease-out;
 
 	@keyframes shine {
 		0% {
@@ -147,6 +148,15 @@
 		}
 		to {
 			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes fade-in-opacity {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
 
@@ -168,6 +178,10 @@
 
 .animate-fade-in {
 	animation: var(--animate-fade-in);
+}
+
+.animate-fade-in-opacity {
+	animation: var(--animate-fade-in-opacity);
 }
 
 ::selection {
